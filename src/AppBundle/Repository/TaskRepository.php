@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use AppBundle\Entity\Category;
 
 /**
  * TaskRepository
@@ -10,4 +11,13 @@ namespace AppBundle\Repository;
  */
 class TaskRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getTask(Category $category){
+            $this->createQueryBuilder('t')
+                ->select('t')
+                ->andWhere('t.category = :category')
+                ->setParameter(':id', $category->getId())
+                ->getQuery()
+                ->getResult();
+        }
+
 }

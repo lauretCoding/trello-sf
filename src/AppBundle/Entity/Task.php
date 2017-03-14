@@ -12,6 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Task
 {
+
+    const STATUS_OPEN = 'open';
+    const STATUS_CLOSED = 'closed';
+
+
     /**
      * @var int
      *

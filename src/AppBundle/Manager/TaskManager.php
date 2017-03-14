@@ -29,6 +29,17 @@ class TaskManager
         $this->entityManager = $entityManager;
     }
 
+
+    public function create(){
+        return new Task();
+    }
+
+    public function save(Task $task){
+        if(null === $task->getId())
+            $this->entityManager->persist($task);
+
+        $this->entityManager->flush();
+    }
     /**
      * @return array
      */
@@ -36,5 +47,7 @@ class TaskManager
         $tasks = $this->entityManager->getRepository(Task::class)->getTask($category);
         return $tasks;
     }
+
+
 
 }

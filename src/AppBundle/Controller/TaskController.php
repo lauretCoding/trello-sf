@@ -31,7 +31,22 @@ class TaskController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/task/{id}", name="app_update_task")
+     */
+    public function updateTask(Request $request, Task $id){
+        $form = $this->createForm(TaskType::class, $id);
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getManager("app.task.manager")->update($form->getData());
+            $this->addFlash('success','Votre tache a bien été modifiée');
+            return $this->redirectToRoute('app_list_category');
+        }
+        return $this->render(':trello:new.html.twig', [
+            "form" => $form->createView(),
+        ]);
+    }
 
 
     private function getManager($manager){

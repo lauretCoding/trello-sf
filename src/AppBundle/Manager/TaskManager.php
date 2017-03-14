@@ -48,6 +48,8 @@ class TaskManager
         return $tasks;
     }
 
-
+    public function update(Task $task){
+        $this->entityManager->flush();
+    }
 
 }

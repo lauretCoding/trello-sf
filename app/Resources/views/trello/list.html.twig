@@ -9,7 +9,7 @@
             {% for task in categorie.tasks %}
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        {{ task.name }}
+                        <a href="{{ path('app_update_task', {'id' : task.id} ) }}">{{ task.name }}</a>
                     </div>
                 </div>
             {% endfor %}

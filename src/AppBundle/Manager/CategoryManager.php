@@ -43,6 +43,12 @@ class CategoryManager
         $this->entityManager->flush();
     }
 
+    public function remove(Category $category){
+        $this->entityManager->remove($category);
+        $this->entityManager->flush();
+    }
+
+
     /**
      * @return array
      */

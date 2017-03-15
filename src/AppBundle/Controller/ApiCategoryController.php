@@ -64,6 +64,16 @@ class ApiCategoryController extends FOSRestController
     }
 
     /**
+     * @Rest\View()
+     * @Rest\Delete("/{id}")
+     */
+    public function removeAction(Category $category)
+    {
+        $this->get("app.category.manager")->remove($category);
+    }
+
+
+    /**
      * @return mixed
      * @Rest\View()
      * @Rest\Put("/{id}")

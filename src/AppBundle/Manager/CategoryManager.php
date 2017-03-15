@@ -47,7 +47,7 @@ class CategoryManager
         $this->entityManager->remove($category);
         $this->entityManager->flush();
     }
-
+  
     /**
      * @return array
      */

@@ -99,7 +99,7 @@ sonata_block:
 
 sonata_admin:
     title: Trello Admin
+    title_logo: bundles/app/img/logo.png
     templates:
-        # other configuration options
         search:              SonataAdminBundle:Core:search.html.twig
         search_result_block: SonataAdminBundle:Block:block_search_result.html.twig

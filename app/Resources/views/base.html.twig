@@ -29,7 +29,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ path('app_list_category') }}">Suivi des taches</a>
+            <a class="navbar-brand" href="{{ path('app_list_category') }}">
+                <img src="{{ asset('bundles/app/img/logo.png') }}" alt="">
+            </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
             <a class="addTask" href="{{ path('app_add_task') }}"> Ajouter une tâche </a>

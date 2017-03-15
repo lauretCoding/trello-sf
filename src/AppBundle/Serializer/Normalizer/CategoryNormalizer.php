@@ -23,5 +23,4 @@ class CategoryNormalizer extends AbstractNormalizer
         return $data instanceof Category;
     }
 
-
 }

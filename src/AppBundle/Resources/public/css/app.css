@@ -1,0 +1,22 @@
+nav, .container{
+    font-family: 'Lato', sans-serif;
+}
+.addTask{
+    border-radius: 5px;
+    border: 1px solid #337ab7;
+    padding: 10px;
+    background: #337ab7;
+    color: white;
+    display: block;
+    margin-top: 4px;
+}
+
+.addTask:hover{
+    color:white;
+    text-decoration: none;
+}
+
+.update{
+    float:right;
+}
+

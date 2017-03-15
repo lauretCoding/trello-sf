@@ -1,15 +1,19 @@
 {% extends 'base.html.twig' %}
+    {% block title 'Liste des taches'%}
 
 {% block content %}
 
     {% for categorie in categories %}
         <div class="col-md-3">
-            {{ categorie.name }}
+            <h2>{{ categorie.name }} <span class="badge">{{ categorie.tasks | length }}</span></h2>
+
 
             {% for task in categorie.tasks %}
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <a href="{{ path('app_update_task', {'id' : task.id} ) }}">{{ task.name }}</a>
+                        <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+                        {{ task.name }}
+                        <a href="{{ path('app_update_task', {'id' : task.id} ) }}"><span class="glyphicon glyphicon-pencil update" aria-hidden="true"></span></a>
                     </div>
                 </div>
             {% endfor %}

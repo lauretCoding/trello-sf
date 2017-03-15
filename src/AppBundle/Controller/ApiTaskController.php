@@ -61,7 +61,7 @@ class ApiTaskController extends FOSRestController
 
 
     /**
-     * @Rest\View()
+     * @Rest\View(statusCode=200)
      * @Rest\Delete("/{id}")
      */
     public function removeAction(Task $task)

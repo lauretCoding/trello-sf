@@ -21,3 +21,15 @@ services:
                 class: AppBundle\Serializer\Normalizer\TaskNormalizer
                 tags:
                     - { name: serializer.normalizer }
+
+    admin.category:
+            class: AppBundle\Admin\CategoryAdmin
+            arguments: [~, AppBundle\Entity\Category, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Category }
+
+    admin.task:
+            class: AppBundle\Admin\TaskAdmin
+            arguments: [~, AppBundle\Entity\Task, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Task }

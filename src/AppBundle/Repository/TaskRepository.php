@@ -11,13 +11,11 @@ use AppBundle\Entity\Category;
  */
 class TaskRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getTask(Category $category){
-            $this->createQueryBuilder('t')
-                ->select('t')
-                ->andWhere('t.category = :category')
-                ->setParameter(':id', $category->getId())
-                ->getQuery()
-                ->getResult();
-        }
+    public function getAllTasks(){
+        return $this->createQueryBuilder('t')
+            ->select('t')
+            ->getQuery()
+            ->getResult();
+    }
 
 }

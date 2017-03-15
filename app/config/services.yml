@@ -11,3 +11,13 @@ services:
     app.task.manager:
             class: AppBundle\Manager\TaskManager
             arguments: ["@=service('doctrine').getManager()"]
+
+    app.normalizer.category:
+            class: AppBundle\Serializer\Normalizer\CategoryNormalizer
+            tags:
+                - { name: serializer.normalizer }
+
+    app.normalizer.task:
+                class: AppBundle\Serializer\Normalizer\TaskNormalizer
+                tags:
+                    - { name: serializer.normalizer }

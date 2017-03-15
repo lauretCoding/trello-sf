@@ -28,10 +28,25 @@ class CategoryManager
         $this->entityManager = $entityManager;
     }
 
+    public function create(){
+        return new Category();
+    }
+
+    public function save(Category $category){
+        if(null === $category->getId())
+            $this->entityManager->persist($category);
+
+        $this->entityManager->flush();
+    }
+
+    public function update(Category $category){
+        $this->entityManager->flush();
+    }
+
     /**
      * @return array
      */
-    public function getCategories(){
+    public function all(){
         $categories = $this->entityManager->getRepository(Category::class)->getCategories();
         return $categories;
     }

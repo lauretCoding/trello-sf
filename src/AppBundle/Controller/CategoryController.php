@@ -10,11 +10,11 @@ class CategoryController extends Controller
 
 
     /**
-     * @Route("/", name="app_list_category")
+     * @Route("/", name="app_list_category", methods={"GET"})
      */
     public function indexAction()
     {
-        $categories = $this->get("app.category.manager")->getCategories();
+        $categories = $this->get("app.category.manager")->all();
         return $this->render(":trello:list.html.twig" , [
             "categories" => $categories,
         ]);

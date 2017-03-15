@@ -40,16 +40,19 @@ class TaskManager
 
         $this->entityManager->flush();
     }
-    /**
-     * @return array
-     */
-    public function getTask(Category $category){
-        $tasks = $this->entityManager->getRepository(Task::class)->getTask($category);
-        return $tasks;
-    }
+
 
     public function update(Task $task){
         $this->entityManager->flush();
     }
 
+    public function all(){
+        $tasks = $this->entityManager->getRepository(Task::class)->getAllTasks();
+        return $tasks;
+    }
+
+    public function remove(Task $task){
+        $this->entityManager->remove($task);
+        $this->entityManager->flush();
+    }
 }

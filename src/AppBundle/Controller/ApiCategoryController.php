@@ -91,12 +91,5 @@ class ApiCategoryController extends FOSRestController
         return new View($form->getErrors(), Response::HTTP_BAD_REQUEST);
     }
 
-    /**
-     * @Rest\View(statusCode=200)
-     * @Rest\Delete("/{id}")
-     */
-    public function removeAction(Category $category)
-    {
-        $this->get("app.category.manager")->remove($category);
-    }
+    
 }
